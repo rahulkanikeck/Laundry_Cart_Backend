@@ -1,0 +1,38 @@
+{
+  "name": "laundry_cart_backend",
+  "version": "1.0.0",
+  "description": "Laundry_Cart_Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulkanikeck/Laundry_Cart_Backend.git"
+  },
+  "keywords": [
+    "laundry",
+    "cart",
+    "node",
+    "mongoose",
+    "backend"
+  ],
+  "author": "Sumit Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahulkanikeck/Laundry_Cart_Backend/issues"
+  },
+  "homepage": "https://github.com/rahulkanikeck/Laundry_Cart_Backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.1",
+    "nodemon": "^2.0.20"
+  }
+}
