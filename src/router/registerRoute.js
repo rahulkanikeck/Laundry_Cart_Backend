@@ -15,7 +15,7 @@ router.post(
     .isAlphanumeric()
     .withMessage("Password must be Alphanumeric"),
   body("Phone")
-    .isLength({ min: 13, max: 13 })
+    .isLength({ min: 10, max: 10 })
     .withMessage("Not A valid Phone Number"),
   async (req, res) => {
     const { Name, Email, Phone, State, District, Address, Pincode, Password } =
@@ -39,7 +39,7 @@ router.post(
         if (err) {
           return res
             .status(403)
-            .json({ status: "Failed", message: err.message });
+            .json({ status: "Failed", Message: err.message });
         }
         // To create the new user
         user = await users.create({
@@ -52,8 +52,17 @@ router.post(
           Pincode: Pincode,
           Password: hash,
         });
+        user
+          .save()
+          .then(() => {
+            console.log("Created User Has been Saved");
+          })
+          .catch((e) => {
+            console.log(e.message);
+          });
+
         // console.log(user);
-        res.status(200).json({ status: "Registration Successfull", user });
+        res.status(200).json({ Message: "Registration Successfull", user });
       });
     } catch (e) {
       res.status(403).json({ status: "Failed", Message: e.message });
