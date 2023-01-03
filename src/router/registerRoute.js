@@ -11,9 +11,7 @@ router.post(
   // password must be at least 6 chars long
   body("Password")
     .isLength({ min: 6, max: 16 })
-    .withMessage("Password Length must be between 6-16 characters")
-    .isAlphanumeric()
-    .withMessage("Password must be Alphanumeric"),
+    .withMessage("Password Length must be between 6-16 characters"),
   body("Phone")
     .isLength({ min: 10, max: 10 })
     .withMessage("Not A valid Phone Number"),
