@@ -8,6 +8,7 @@ const orderSchema = new Schema({
     orderId: { type: String, required: true },
     // orderTimeDate: { type: String, required: true },
     storeLocation: { type: String, required: true },
+    storeAddress: { type: String, required: true },
     city: { type: String, required: true },
     storePhone: { type: Number, required: true },
     totalItems: { type: Number, required: true },

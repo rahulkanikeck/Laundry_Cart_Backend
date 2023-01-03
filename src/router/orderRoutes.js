@@ -41,13 +41,31 @@ router.put('/:order_Id' , async (req , res)=> {
     try{
         let data = await orderModel.findOne({orderId : req.params.order_Id})
 
-        console.log(data.user)
-        console.log(req.user)
+        //console.log(data.user)
+        //console.log(req.user)
 
         let order = await orderModel.updateOne({orderId : req.params.order_Id} , {$set :{status : "cancelled"}})
         res.json({
             status: "Success",
             order
+          })
+        
+    }
+    catch(e){
+        res.status(403).json({
+            status : "Failed",
+            message: e.message
+        })
+    }
+})
+
+
+router.get('/:order_id' , async (req , res)=> {
+    try{
+        let viewdata = await orderModel.findOne({_id : req.params.order_id})
+        res.json({
+            status: "Success",
+            viewdata
           })
         
     }
