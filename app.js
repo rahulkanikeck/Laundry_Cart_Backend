@@ -3,23 +3,13 @@ const mongoose = require("mongoose");
 const RegisterRoute = require("./src/router/registerRoute");
 const SigninRoute = require("./src/router/signInRoute");
 const bodyparser = require("body-parser");
-const jwt = require("jsonwebtoken");
-const secret = "JWTAUTH";
-const port = process.env.port || 8080;
+
+const port = process.env.port || 9000;
 const app = express();
 var cors = require("cors");
 app.use(cors());
 app.use(bodyparser.json());
 app.use(express.json());
-app.use(cors());
-Router.use(function (req, res, next) {
-  header("Access-Control-Allow-Origin: *");
-  header("Access-Control-Allow-Methods: PUT,PATCH,GET,POST,DELETE,OPTIONS");
-  header(
-    "Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb://127.0.0.1/LCUsers", (e) => {
   if (e) {
