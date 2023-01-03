@@ -1,6 +1,7 @@
 const express = require("express");
 const users = require("../models/registerModel");
 const bcrypt = require("bcrypt");
+const cors=require("cors")
 require("dotenv").config(); // to access the secret key as "process.env.secret"
 // const secret = "JWTAUTH";
 const router = express.Router();
