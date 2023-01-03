@@ -5,13 +5,15 @@ const SigninRoute = require("./src/router/signInRoute");
 const bodyparser = require("body-parser");
 
 const port = process.env.port || 9000;
+const DB =
+  "mongodb+srv://Sumitanwar:12345@cluster0.76k3znr.mongodb.net/Laundry_Cart?retryWrites=true&w=majority";
 const app = express();
 var cors = require("cors");
 app.use(cors());
 app.use(bodyparser.json());
 app.use(express.json());
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb://127.0.0.1/LCUsers", (e) => {
+mongoose.connect(DB, (e) => {
   if (e) {
     console.log(e.message);
   }
