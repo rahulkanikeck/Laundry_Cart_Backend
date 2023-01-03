@@ -8,8 +8,11 @@ const port = process.env.port || 9000;
 const DB =
   "mongodb+srv://Sumitanwar:12345@cluster0.76k3znr.mongodb.net/Laundry_Cart?retryWrites=true&w=majority";
 const app = express();
-var cors = require("cors");
-app.use(cors());
+
+var cors = require('cors') 
+app.use(cors())
+
+
 app.use(bodyparser.json());
 app.use(express.json());
 mongoose.set("strictQuery", false);
